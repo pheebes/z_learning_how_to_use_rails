@@ -1,6 +1,9 @@
-<h1>Skills! </h1>
+<h1><%= @user.first_name %> <%= @user.last_name%>'s Skills</h1>
 
-<% @skills.each do |s| %>
-<span><% s.name %></span>
-<span><% s.level %></span>
-<% end %>
+  <ol>
+  <% @skills.each do |s| %>
+    <tr>
+      <li><%= s.name %><span> - </span>
+      <%= s.level %></span></li>
+  <% end %>
+    </ol>
