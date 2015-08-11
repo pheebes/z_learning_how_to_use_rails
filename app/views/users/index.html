@@ -1,13 +1,6 @@
-<!Doctype HTML>
-<html>
-  <head>
-  </head>
-  <body>
-    <%= @users.each do |u| %>
-      <div>
-        <span><%= u.first_name %></span>
-        <span><%= u.last_name %></span>
-      </div>
-    <% end %>
-  </body>
-</html>
+<%= @users.each do |u| %>
+  <div>
+    <span><%= u.first_name %></span>
+    <span><%= u.last_name %></span>
+  </div>
+<% end %>
