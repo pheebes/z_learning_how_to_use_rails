@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    #@users = User.all
     respond_to do |format|
       format.html { @users = User.all }
       format.json {
@@ -30,11 +29,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    #respond_to do |format|
-      #format.html {
+    respond_to do |format|
+      format.html {
 
-      #}
-      #format.json {
+      }
+      format.json {
         if @user.save
           render status: 200, json: {
             message: "Successfully created user!",
@@ -46,8 +45,8 @@ class UsersController < ApplicationController
             errors: @user.errors
           }.to_json
         end
-      #}
-    #end
+      }
+    end
   end
 
   def update
