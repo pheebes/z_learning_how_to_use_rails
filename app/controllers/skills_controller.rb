@@ -1,18 +1,38 @@
 class SkillsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :get_user
+
+  def get_user
+    @user = User.find(params[:user_id])
+  end
 
   def index
-    @user = User.find(params[:user_id])
     @skills = @user.skills
+    respond_to do |format|
+      format.html { }
+      format.json {
+        render json: @skills.to_json
+      }
+    end
   end
 
-  def show
-  end
 
   def new
+    @skill = @user.skills.build
   end
 
-   def create
+  def create
+    @skill = @user.skills.build(skill_params)
+    @skill.save
+    respond_to do |format|
+      format.html { }
+      format.json {
+        render json: @skills.to_json
+      }
+    end
+  end
+
+   def edit
    end
 
    def update
