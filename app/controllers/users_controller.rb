@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :get_user, only: [:show, :update, :destroy]
+
+  def get_user
+    @user = User.find(params[:id])
+  end
+
   def index
     #@users = User.all
     respond_to do |format|
@@ -11,6 +17,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html {
+
+      }
+      format.json {
+        render json: @user.to_json
+      }
+    end
   end
 
   def create
@@ -19,7 +33,7 @@ class UsersController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
   private
