@@ -1,0 +1,33 @@
+<h1>Add a New User </h1>
+
+<%= form_for (@user) do |f| %>
+
+  <p>
+    <%= f.label :first_name, "First Name:" %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name, "First Name:" %><br>
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= f.label :years_of_experience, "Years of Experience:" %><br>
+    <%= f.number_field :years_of_experience %>
+  </p>
+
+  <p>
+    <%= f.label :email, "Email:" %><br>
+    <%= f.email_field :email %>
+  </p
+
+
+
+
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

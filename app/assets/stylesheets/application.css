@@ -14,16 +14,13 @@
  *= require_self
  */
 
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-/* NAVIGATION STYLES */
+/* NAVIGATION BAR STYLES */
 nav {
   margin: 20px 0 10px 0;
 }
 nav ul {
+  margin: 0px;
+  padding: 0px;
   list-style-type: none;
   text-align: center;
 }
@@ -37,6 +34,7 @@ nav li a {
   font-size: 1.5em;
   color: black;
   padding: 10px;
+  margin: 1px;
   border-radius: 5px;
   background-color: #a491ff;
 }
