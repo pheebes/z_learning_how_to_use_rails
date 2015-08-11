@@ -70,7 +70,7 @@ class UsersController < ApplicationController
     end
   end
 
-#need to test destroy code!
+
   def destroy
     respond_to do |format|
       format.html {   }
@@ -92,8 +92,6 @@ class UsersController < ApplicationController
 
 
   private
-
-
   def user_params
     params.require(:user).permit(:first_name, :last_name, :years_of_experience, :email)
   end
