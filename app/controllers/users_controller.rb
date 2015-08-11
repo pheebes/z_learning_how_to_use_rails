@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :get_user, only: [:show, :update, :destroy]
 
   def get_user
@@ -28,6 +29,25 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+    #respond_to do |format|
+      #format.html {
+
+      #}
+      #format.json {
+        if @user.save
+          render status: 200, json: {
+            message: "Successfully created user!",
+            user: @user
+          }.to_json
+        else
+          render status: 422, json: {
+            message: "Unable to create user.",
+            errors: @user.errors
+          }.to_json
+        end
+      #}
+    #end
   end
 
   def update
