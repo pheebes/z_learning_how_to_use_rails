@@ -70,14 +70,30 @@ class UsersController < ApplicationController
     end
   end
 
-
+#need to test destroy code!
   def destroy
+    respond_to do |format|
+      format.html {   }
+      format.json {
+        if @user.destroy
+          render status: 200, json: {
+            message: "Successfully deleted user!"
+          }.to_json
+        else
+          render status: 404, json: {
+            message: "Failed to delete user.",
+            user: @user,
+            errors: @user.errors
+          }.to_json
+        end
+      }
+    end
   end
 
 
   private
 
-  
+
   def user_params
     params.require(:user).permit(:first_name, :last_name, :years_of_experience, :email)
   end
