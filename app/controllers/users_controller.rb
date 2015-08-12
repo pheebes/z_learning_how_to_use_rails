@@ -106,6 +106,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :years_of_experience, :email, skill_attributes: [:id, :user_id, :name, :level])
+    puts "params: #{params}"
+    params.require(:user).permit(:first_name, :last_name, :years_of_experience, :email, skills_attributes: [:id, :name, :level])
   end
 end

@@ -21,10 +21,10 @@
     <%= f.email_field :email %>
   </p>
 
-<%= f.fields_for :skills do |builder| %>
+<%= f.fields_for :skills do |s| %>
   <div>
-    <%= builder.label :name, "Skill:" %><br>
-    <%= builder.text_field :name %>
+    <%= s.label :name, "Skill:" %><br>
+    <%= s.text_field :name %>
   </div>
 <% end %>
 
