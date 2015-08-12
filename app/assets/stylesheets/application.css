@@ -47,3 +47,15 @@ nav li a:hover {
 .container {
   margin: 10px;
 }
+
+/* Make links look like Buttons */
+.link_button a {
+  text-decoration: none;
+  padding: 2px 5px 2px 5px;
+  border-radius: 5px;
+  background-color: skyblue;
+}
+
+.delete_button a {
+  background-color: salmon;
+}
