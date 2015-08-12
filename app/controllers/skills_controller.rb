@@ -24,7 +24,9 @@ class SkillsController < ApplicationController
   def create
     @skill = @user.skills.build(skill_params)
       respond_to do |format|
-        format.html { }
+        format.html {
+          @skill.save
+        }
         format.json {
           if @skill.save
             render status: 200, json: {

@@ -2,3 +2,9 @@
 <p><%= @user.last_name %></p>
 <p><%= @user.years_of_experience %></p>
 <p><%= @user.email %></p>
+<ol>
+  <% for skill in @user.skills %>
+    <li><%= skill.name %><span> - </span><%= skill.level %></li>
+
+    <% end %>
+</ol>

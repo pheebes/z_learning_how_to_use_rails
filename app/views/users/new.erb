@@ -1,14 +1,13 @@
 <h1>Add a New User </h1>
 
-<%= form_for (@user) do |f| %>
-
+<%= form_for @user, url: {action: "create"}, html: {class: "create_user_form"} do |f| %>
   <p>
     <%= f.label :first_name, "First Name:" %><br>
     <%= f.text_field :first_name %>
   </p>
 
   <p>
-    <%= f.label :last_name, "First Name:" %><br>
+    <%= f.label :last_name, "Last Name:" %><br>
     <%= f.text_field :last_name %>
   </p>
 
@@ -20,14 +19,17 @@
   <p>
     <%= f.label :email, "Email:" %><br>
     <%= f.email_field :email %>
-  </p
+  </p>
 
-
-
-
-
+<%= f.fields_for :skills do |builder| %>
+  <div>
+    <%= builder.label :name, "Skill:" %><br>
+    <%= builder.text_field :name %>
+  </div>
+<% end %>
 
   <p>
     <%= f.submit %>
   </p>
+
 <% end %>

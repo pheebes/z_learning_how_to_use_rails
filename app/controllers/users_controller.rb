@@ -30,12 +30,22 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.skills.build
+  #  3.times { @user.skills.build }
   end
 
   def create
     @user = User.new(user_params)
+
+
     respond_to do |format|
-      format.html {   }
+      format.html {
+        if @user.save
+          redirect_to @user
+        else
+          render :new
+        end
+       }
       format.json {
         if @user.save
           render status: 200, json: {
@@ -96,6 +106,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :years_of_experience, :email)
+    params.require(:user).permit(:first_name, :last_name, :years_of_experience, :email, skill_attributes: [:id, :user_id, :name, :level])
   end
 end
