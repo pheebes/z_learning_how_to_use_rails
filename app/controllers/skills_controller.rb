@@ -23,14 +23,21 @@ class SkillsController < ApplicationController
 
   def create
     @skill = @user.skills.build(skill_params)
-    @skill.save
-    respond_to do |format|
-      format.html { }
-      format.json {
-        render json: @skills.to_json
-      }
+      respond_to do |format|
+        format.html { }
+        format.json {
+          if @skill.save
+            render status: 200, json: {
+              message: "New skill was saved!",
+              skill: @skill
+            }.to_json
+          else render status: 422, json: {
+            message: "Skill was not saved."
+          }.to_json
+          end
+        }
+       end
     end
-  end
 
    def edit
    end
