@@ -30,8 +30,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @user.skills.build
-  #  3.times { @user.skills.build }
+  #  @user.skills.build
+    3.times { @user.skills.build }
   end
 
   def create

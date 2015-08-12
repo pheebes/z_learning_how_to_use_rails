@@ -22,10 +22,16 @@
   </p>
 
 <%= f.fields_for :skills do |s| %>
-  <div>
+  <p>
     <%= s.label :name, "Skill:" %><br>
-    <%= s.text_field :name %>
-  </div>
+    <%= s.text_field :name %><br>
+    <%= s.radio_button(:level, "Beginner") %>
+    <%= s.label(:level, "Beginner") %><br>
+    <%= s.radio_button(:level, "Intermediate") %>
+    <%= s.label(:level, "Intermediate") %><br>
+    <%= s.radio_button(:level, "Advanced") %>
+    <%= s.label(:level, "Advanced") %><br>
+  </p>
 <% end %>
 
   <p>
