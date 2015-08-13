@@ -33,14 +33,15 @@ nav li a {
   text-decoration: none;
   font-size: 1.5em;
   color: black;
+  background-color: #00e5ee;
   padding: 10px;
   margin: 1px;
   border-radius: 5px;
-  background-color: #a491ff;
 }
 
 nav li a:hover {
-  background-color: #bbaefc
+  color: slateblue;
+  background-color: #00e5ff;
 }
 
 /* CONTAINER STYLES */
@@ -51,11 +52,31 @@ nav li a:hover {
 /* Make links look like Buttons */
 .link_button a {
   text-decoration: none;
+  color: black;
+  background-color: #00c5dd;
   padding: 2px 5px 2px 5px;
   border-radius: 5px;
-  background-color: skyblue;
+}
+
+.link_button a:hover {
+  color: slateblue;
+  background-color: #00c5ff;
+}
+
+.new_button a {
+  background-color: #00c5aa;
+}
+
+.new_button a:hover {
+  color: slateblue;
+  background-color: forestgreen;
 }
 
 .delete_button a {
-  background-color: salmon;
+  background-color: orange;
+}
+
+.delete_button a:hover {
+  color: slateblue;
+  background-color: #ff7d40;
 }
