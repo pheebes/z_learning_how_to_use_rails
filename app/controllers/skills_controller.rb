@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :get_user
+  before_action :get_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def get_user
     @user = User.find(params[:user_id])
@@ -14,6 +14,10 @@ class SkillsController < ApplicationController
         render json: @skills.to_json
       }
     end
+  end
+
+
+  def show_skills
   end
 
 
