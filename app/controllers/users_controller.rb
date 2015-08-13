@@ -30,7 +30,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-  #  @user.skills.build
     3.times { @user.skills.build }
   end
 
@@ -66,7 +65,13 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-       format.html {   }
+       format.html {
+          if @user.update(user_params)
+            redirect_to @user
+          else
+            render :edit
+          end
+        }
        format.json {
         if @user.update(user_params)
           render status: 200, json: {
@@ -108,6 +113,6 @@ class UsersController < ApplicationController
   private
   def user_params
     puts "params: #{params}"
-    params.require(:user).permit(:first_name, :last_name, :years_of_experience, :email, skills_attributes: [:id, :name, :level])
+    params.require(:user).permit(:first_name, :last_name, :years_of_experience, :email, skills_attributes: [:id, :name, :level, :_destroy])
   end
 end

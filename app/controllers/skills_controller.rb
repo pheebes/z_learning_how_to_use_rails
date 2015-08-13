@@ -55,6 +55,8 @@ class SkillsController < ApplicationController
    def destroy
    end
 
+
+
    private
    def skill_params
      params.require(:skill).permit(:name, :level)
