@@ -1,0 +1,33 @@
+<h1>Edit Me!</h1>
+
+<%= form_for @user, url: {action: "update"}, html: {class: "update_user_form"} do |f| %>
+<p>
+  <%= f.label :first_name, "First Name:" %><br>
+  <%= f.text_field :first_name %>
+</p>
+<p>
+  <%= f.label :last_name, "Last Name:" %><br>
+  <%= f.text_field :last_name %>
+</p>
+<p>
+  <%= f.label :years_of_experience, "Years of Experience"%><br>
+  <%= f.text_field :years_of_experience %>
+</p>
+<p>
+  <%= f.label :email, "Email:" %><br>
+  <%= f.text_field :email %>
+</p>
+
+  <%= f.fields_for :skills do |s| %>
+  <p>
+    <%= s.label :name, "Skill:" %><br>
+    <%= s.text_field :name %><br>
+    <%= s.radio_button(:level, "Beginner") %>
+    <%= s.label(:level, "Beginner") %><br>
+    <%= s.radio_button(:level, "Intermediate") %>
+    <%= s.label(:level, "Intermediate") %><br>
+    <%= s.radio_button(:level, "Advanced") %>
+    <%= s.label(:level, "Advanced") %><br>
+  </p>
+  <% end %>
+<% end %>

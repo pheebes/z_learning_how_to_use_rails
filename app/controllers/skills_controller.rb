@@ -18,6 +18,7 @@ class SkillsController < ApplicationController
 
 
   def show_skills
+    @skills = Skill.all
   end
 
 

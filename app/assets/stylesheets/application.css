@@ -40,7 +40,6 @@ nav li a {
 }
 
 nav li a:hover {
-  color: slateblue;
   background-color: #00e5ff;
 }
 
@@ -59,17 +58,15 @@ nav li a:hover {
 }
 
 .link_button a:hover {
-  color: slateblue;
   background-color: #00c5ff;
 }
 
 .new_button a {
-  background-color: #00c5aa;
+  background-color: #00c957;
 }
 
 .new_button a:hover {
-  color: slateblue;
-  background-color: forestgreen;
+  background-color: #00e957;
 }
 
 .delete_button a {
@@ -77,6 +74,5 @@ nav li a:hover {
 }
 
 .delete_button a:hover {
-  color: slateblue;
   background-color: #ff7d40;
 }

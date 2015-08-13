@@ -1,5 +1,4 @@
 <h1>Home Page</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 <% @users.each do |u| %>
   <p>
     <span><%= u.first_name %></span>
@@ -9,4 +8,4 @@
     <span class="link_button delete_button"><%= link_to "Delete", u, method: :delete  %></span>
   </p>
 <% end %>
-<%= button_to "New User", class: "new_button" %>
+<span class="link_button new_button"><%= link_to "New User", new_user_path %><span>

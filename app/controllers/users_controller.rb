@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :get_user, only: [:show, :update, :destroy]
+  before_action :get_user, only: [:show, :edit, :update, :destroy]
 
 
   def get_user
@@ -36,8 +36,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
-
     respond_to do |format|
       format.html {
         if @user.save
@@ -62,6 +60,9 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def edit
+  end
 
   def update
     respond_to do |format|
