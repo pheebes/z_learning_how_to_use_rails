@@ -6,7 +6,7 @@
 
     <%= f.fields_for :skills do |s| %>
       <%= s.input :name, label: "Skill" %>
-      <%= s.input :level, label: "Skill Level" %>
+        <%= s.collection_radio_buttons :level, [[1, "Beginner"], [2, "Intermediate"], [3, "Advanced"]], :first, :last %>
     <% end %>
 
 
