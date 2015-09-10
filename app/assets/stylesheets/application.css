@@ -14,65 +14,10 @@
  *= require_self
  */
 
-/* NAVIGATION BAR STYLES */
-nav {
-  margin: 20px 0 10px 0;
-}
-nav ul {
-  margin: 0px;
-  padding: 0px;
-  list-style-type: none;
-  text-align: center;
+body {
+  padding-top: 50px;
 }
 
-nav li {
-  display: inline;
-}
-nav li a {
-  text-align: center;
-  text-decoration: none;
+.navbar {
   font-size: 1.5em;
-  color: black;
-  background-color: #00e5ee;
-  padding: 10px;
-  margin: 1px;
-  border-radius: 5px;
-}
-
-nav li a:hover {
-  background-color: #00e5ff;
-}
-
-/* CONTAINER STYLES */
-.container {
-  margin: 10px;
-}
-
-/* Make links look like Buttons */
-.link_button a {
-  text-decoration: none;
-  color: black;
-  background-color: #00c5dd;
-  padding: 2px 5px 2px 5px;
-  border-radius: 5px;
-}
-
-.link_button a:hover {
-  background-color: #00c5ff;
-}
-
-.new_button a {
-  background-color: #00c957;
-}
-
-.new_button a:hover {
-  background-color: #00e957;
-}
-
-.delete_button a {
-  background-color: orange;
-}
-
-.delete_button a:hover {
-  background-color: #ff7d40;
 }
